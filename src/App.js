@@ -8,10 +8,12 @@ function App() {
     UsrFirstName: "",
     UsrMiddleName: "",
     UsrLastName: "",
+    UsrSuffix:"",
     UsrEmailAddress: "",
     UsrPhoneNumber: "",
     UsrBirthday: "",
     UsrStreetAddress: "",
+    UsrSuitAptOther:"",
     UsrZIPCode: "",
     UsrCity: "",
     UsrState: "",
@@ -49,10 +51,12 @@ function App() {
             UsrFirstName: "",
             UsrMiddleName: "",
             UsrLastName: "",
+            UsrSuffix:"",
             UsrEmailAddress: "",
             UsrPhoneNumber: "",
             UsrBirthday: "",
             UsrStreetAddress: "",
+            UsrSuitAptOther:"",
             UsrZIPCode: "",
             UsrCity: "",
             UsrState: "",
@@ -186,6 +190,25 @@ function App() {
                                 value={state.UsrLastName}
                                 required
                               />
+                              <label className="fieldlabels" htmlFor="state">
+                                Suffix (optional)
+                              </label>
+                              <select
+                                type="text"
+                                name="UsrSuffix"
+                                placeholder="Suffix"
+                                onChange={inputHandle}
+                                value={state.UsrSuffix}
+                                id="id"n
+                                required
+                              >
+                                <option value>
+                                  --Please select a Suffix--
+                                </option>
+                                <option value="6c002890-1d30-485c-bb5f-6a8f4e9d1cf2">Mr</option>
+                                <option value="f572d13a-c0ad-4882-9e7a-12257a1c88e3">Mrs</option>
+                                <option value="f5999c49-9d50-46ef-b577-18eec9d867c1">Miss</option>
+                              </select>
                               <label className="fieldlabels" htmlFor="birthday">
                                 Birthday: *
                               </label>
@@ -208,6 +231,17 @@ function App() {
                                 placeholder="Street Address"
                                 onChange={inputHandle}
                                 value={state.UsrStreetAddress}
+                                required
+                              />
+                              <label className="fieldlabels">
+                              Suit/apt/other (optional)
+                              </label>
+                              <input
+                                type="text"
+                                name="UsrSuitAptOther"
+                                placeholder="Suit/apt/other"
+                                onChange={inputHandle}
+                                value={state.UsrSuitAptOther}
                                 required
                               />
                               <label className="fieldlabels">Zip Code: *</label>
@@ -408,11 +442,11 @@ function App() {
                                 <option value>
                                   --Please select a ID type--
                                 </option>
-                                <option value="Driver's license">Driver's license</option>
-                                <option value="Voter ID">Voter ID</option>
-                                <option value="State ID">State ID</option>
-                                <option value="Arkansas">Arkansas</option>
-                                <option value="California">California</option>
+                                <option value="8f788d22-6f77-413c-aec5-261538552df1">Driver's license</option>
+                                <option value="22ba0159-e64b-411b-be42-6b32e564235c">Voter ID</option>
+                                <option value="42459a66-c263-4a83-b863-f59284be7884">State ID</option>
+                                <option value="d5f3f7c5-a18a-4acd-a0f2-2d2a1a229447">Arkansas</option>
+                                <option value="a7ee33fc-1909-4b2a-ac51-5f0906869993">California</option>
                               </select>
                               <label className="fieldlabels" htmlFor="state">
                                 Issuing state or territory: *
@@ -427,9 +461,9 @@ function App() {
                                 required
                               >
                                 <option value>--Please select a State--</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
+                                <option value="2f66-0b5c-45ab-a1a6-90667d703a20">Alabama</option>
+                                <option value="8506ccea-1037-4897-86b5-b1414135d97f">Alaska</option>
+                                <option value="bc548a71-2574-46ab-87ac-75ddf13470b3">Arizona</option>
                                 <option value="AR">Arkansas</option>
                                 <option value="CA">California</option>
                                 <option value="CO">Colorado</option>
@@ -440,7 +474,7 @@ function App() {
                                 <option value="GA">Georgia</option>
                                 <option value="HI">Hawaii</option>
                                 <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
+                                <option value="2d577854-1ad7-4e4f-8cce-76597132edb6">Illinois</option>
                                 <option value="IN">Indiana</option>
                                 <option value="IA">Iowa</option>
                                 <option value="KS">Kansas</option>
@@ -470,7 +504,7 @@ function App() {
                                 <option value="SC">South Carolina</option>
                                 <option value="SD">South Dakota</option>
                                 <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
+                                <option value="d4c6f4a9-6db9-4bcf-b01c-a37b2372cf5e">Texas</option>
                                 <option value="UT">Utah</option>
                                 <option value="VT">Vermont</option>
                                 <option value="VA">Virginia</option>
