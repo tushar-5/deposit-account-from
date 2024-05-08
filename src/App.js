@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import "./logo.png";
+import logo from "./asset/logo-implemify.png";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -114,10 +114,11 @@ function App() {
                 <div className="card px-0">
                   <img
                     className="my-4"
-                    src="./logo.png"
+                    src={logo}
                     style={{ maxWidth: "220px", margin: "0 auto" }}
                     alt="Logo"
                   />
+                  {/* <img src="logo.png" alt="Logo" width="220px" height="600"></img> */}
                   <h2 id="heading">Deposit Account Registration</h2>
                   {/* <p>Fill all form field to go to the next step</p> */}
                   <form id="msform">
