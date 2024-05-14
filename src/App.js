@@ -2,6 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import logo from "./asset/logo-implemify.png";
 
+
+function generateOTP() {
+  const digits = '0123456789';
+  let UsrOtp = '';
+  for (let i = 0; i < 6; i++) {
+    UsrOtp += digits[Math.floor(Math.random() * 10)];
+  }
+  return UsrOtp;
+}
+
 function App() {
   const [step, setStep] = useState(1);
   const [state, setState] = useState({
@@ -10,6 +20,7 @@ function App() {
     UsrLastName: "",
     UsrSuffix:"",
     UsrEmailAddress: "",
+    UsrOtp:"",
     UsrPhoneNumber: "",
     UsrBirthday: "",
     UsrStreetAddress: "",
@@ -24,12 +35,16 @@ function App() {
     UsrIssuingState: "",
     EntityName: "UsrDepositAccount",
   });
+
+  const handleGenerateOTP = () => {
+    const newOTP = generateOTP();
+    setState({ ...state, UsrOtp: newOTP });
+  };
+
   const inputHandle = (e) => {
     const { name, value } = e.target;
-    setState((data) => ({
-      ...data,
-      [name]: value,
-    }));
+    setState({ ...state, [name]: value });
+    console.log(state);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -386,7 +401,10 @@ function App() {
                           name="next"
                           className="next action-button"
                           defaultValue="Next"
-                          onClick={nextStep}
+                          onClick={() => {
+                            handleGenerateOTP();
+                            nextStep();
+                          }}
                           required
                         />
                         <input
@@ -446,8 +464,6 @@ function App() {
                                 <option value="8f788d22-6f77-413c-aec5-261538552df1">Driver's license</option>
                                 <option value="22ba0159-e64b-411b-be42-6b32e564235c">Voter ID</option>
                                 <option value="42459a66-c263-4a83-b863-f59284be7884">State ID</option>
-                                <option value="d5f3f7c5-a18a-4acd-a0f2-2d2a1a229447">Arkansas</option>
-                                <option value="a7ee33fc-1909-4b2a-ac51-5f0906869993">California</option>
                               </select>
                               <label className="fieldlabels" htmlFor="state">
                                 Issuing state or territory: *
