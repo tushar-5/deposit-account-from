@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../App.css"
 import logo from "../asset/logo-implemify.png";
 
@@ -13,6 +14,9 @@ function generateOTP() {
 }
 
 function DepositForm() {
+  const location = useLocation()
+  const AcType = location.state
+  const [showForm, setShowForm] = useState(true);
   const [step, setStep] = useState(1);
   const [formData, setformData] = useState({
     UsrFirstName: "",
@@ -38,7 +42,7 @@ function DepositForm() {
 
   const handleGenerateOTP = () => {
     const newOTP = generateOTP();
-    setformData({ ...formData, UsrOtp: newOTP });
+    setformData({ ...formData, UsrOtp: newOTP, UsrAcType: AcType });
   };
 
   const inputHandle = (e) => {
@@ -73,6 +77,7 @@ function DepositForm() {
         if (response.ok) {
           lastStep()
           console.log("Form data sent successfully");
+          setShowForm(false)
           setformData({
             UsrFirstName: "",
             UsrMiddleName: "",
@@ -121,11 +126,11 @@ function DepositForm() {
   const nxtStep = () => {
     if (!formData.UsrEmailAddress) {
       alert("Please fill all * fields.");
-      return; // Prevent form submission if OTP is not entered
+      return;
     }
     if (!formData.UsrPhoneNumber) {
       alert("Please fill all * fields.");
-      return; // Prevent form submission if OTP is not entered
+      return;
     }
     setStep((prevStep) => prevStep + 1);
   };
@@ -148,33 +153,35 @@ function DepositForm() {
                 style={{ maxWidth: "220px", margin: "0 auto" }}
                 alt="Logo"
               />
-              <h2 id="heading">Deposit Account Registration</h2>
+                {showForm && (
+              <h2 id="heading">Deposit Account Registration</h2>)}
               <form id="msform">
                 {/* progressbar */}
-                <ul id="progressbar">
-                  <li className={step >= 1 ? 'active' : ''} id="account">
-                    <strong>About</strong>
-                  </li>
-                  <li className={step >= 2 ? 'active' : ''} id="personal">
-                    <strong>Contact Details</strong>
-                  </li>
-                  <li className={step >= 3 ? 'active' : ''} id="payment">
-                    <strong>Identity Details</strong>
-                  </li>
-                  {/* <li id="confirm"><strong>Submit</strong></li> */}
-                </ul>
-                <div className="progress">
-                  <div
-                    className="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
+                {showForm && (
+                <div>
+                  <ul id="progressbar">
+                    <li className={step >= 1 ? 'active' : ''} id="account">
+                      <strong>About</strong>
+                    </li>
+                    <li className={step >= 2 ? 'active' : ''} id="personal">
+                      <strong>Contact Details</strong>
+                    </li>
+                    <li className={step >= 3 ? 'active' : ''} id="payment">
+                      <strong>Identity Details</strong>
+                    </li>
+                    {/* <li id="confirm"><strong>Submit</strong></li> */}
+                  </ul>
+                  <div className="progress">
+                    <div
+                      className="progress-bar progress-bar-striped progress-bar-animated"
+                      role="progressbar"
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    />
+                  </div></div>)}
                 <br />
                 <form onSubmit={handleSubmit}>
                   {/* fieldsets */}
-
                   {step === 1 && (
                     <fieldset>
                       <div className="form-card">
@@ -619,6 +626,7 @@ function DepositForm() {
                             <h5 className="purple-text text-center">
                               Thank you for your interest in opening an account with Implemify! Our digital low-code/no-code (LCNC) solutions simplify traditional banking for an improved end-to-end user experience.
                             </h5>
+                            <p>Kindly check your email for further instructions.</p>
                           </div>
                         </div>
                       </div>
