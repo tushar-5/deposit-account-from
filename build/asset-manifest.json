@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.458156c7.css",
+    "main.js": "/static/js/main.e4ef7463.js",
+    "static/js/453.30ac584f.chunk.js": "/static/js/453.30ac584f.chunk.js",
+    "static/media/img_1.jpg": "/static/media/img_1.23aed52b40b351aaa058.jpg",
+    "static/media/img_2.jpg": "/static/media/img_2.a642f783001ed66a4aeb.jpg",
+    "static/media/logo-implemify.png": "/static/media/logo-implemify.e91a3eb94a9139eaaa4a.png",
+    "static/media/logo.png": "/static/media/logo.76a193698bf4207dee4c.png",
+    "index.html": "/index.html",
+    "main.458156c7.css.map": "/static/css/main.458156c7.css.map",
+    "main.e4ef7463.js.map": "/static/js/main.e4ef7463.js.map",
+    "453.30ac584f.chunk.js.map": "/static/js/453.30ac584f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.458156c7.css",
+    "static/js/main.e4ef7463.js"
+  ]
+}
