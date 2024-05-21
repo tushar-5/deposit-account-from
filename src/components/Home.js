@@ -7,7 +7,6 @@ import savings from "../implemify-bank/images/savings.png";
 import loan from "../implemify-bank/images/loan.png";
 import img_1 from "../implemify-bank/images/img_1.jpg";
 import img_2 from "../implemify-bank/images/img_2.jpg";
-/* import { ReactComponent as CheckCircleIcon } from "../asset/check2.svg" */
 
 const Homepage = () => {
   return(
@@ -24,7 +23,7 @@ const Homepage = () => {
     <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-6 col-xl-2">
+          <div class="col-6 col-xl-2 center">
             <h1 class="mb-0 site-logo">
               <a href="index.html" class="h2 mb-0"><img src={logo} alt="" /><span class="">Bank</span>
               </a>
@@ -113,14 +112,14 @@ const Homepage = () => {
             </div>
 
             <div class="mb-4">
-              <ul class="list-unstyled ul-check success" >
-                <li>
+              <ul class="list-unstyled" >
+                <li class="d-flex" ><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Quick and easy application process; know if you’re approved in as little as 15 minutes!
                 </li>
-                <li>
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Mobile banking with real-time account activity updates and alerts.
                 </li>
-                <li>
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Earn rewards, cash back, and discounts via integrated apps and features.
                 </li>
               </ul>
@@ -135,14 +134,14 @@ const Homepage = () => {
             </div>
 
             <div class="mb-4">
-              <ul class="list-unstyled ul-check success">
-                <li>
+              <ul class="list-unstyled">
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Lower fees than traditional banks, with competitive APY on account balances.
                 </li>
-                <li>
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Flexibility to link your digital account to existing accounts for easy fund transfers
                 </li>
-                <li>
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Simple and secure online experience for 24/7 banking convenience.
                 </li>
               </ul>
@@ -168,14 +167,14 @@ const Homepage = () => {
             </div>
 
             <div class="mb-4">
-              <ul class="list-unstyled ul-check success">
-                <li>
+              <ul class="list-unstyled">
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Intuitive application process that seamlessly stores and protects user data.
                 </li>
-                <li>
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Receive personalized offers based on your financial options and goals.
                 </li>
-                <li>
+                <li class="d-flex"><i class="fa fa-check mt-xl-2 mt-1 mr-2"></i>
                   Automatic withdrawals ensure you never miss a payment.
                 </li>
               </ul>

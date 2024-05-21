@@ -1174,3 +1174,24 @@ figure figcaption {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.center {
+    display: block;
+    margin-left: 30% ;
+    margin-right: auto;
+    width: 50%;
+  }
+  .fa-check{
+    padding-right: 10px;
+  }
+  .fa-check:before {
+    font-family: FontAwesome !important;
+    content: "\f00c";
+    padding-right: 10px;
+}
+ul li{
+    line-height: 1.5 !important;
+}
+.fa{
+    font-family: "Poppins", sans-serif !important;
+}
