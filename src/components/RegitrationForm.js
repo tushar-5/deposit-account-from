@@ -121,7 +121,7 @@ const RegitrationForm = () => {
         // Handle final submission
         console.log('Form submitted:', formData);
         fetch(
-          // "https://webhooks.creatio.com/webhooks/7df1ce6d-59e7-4c12-8ea2-fff49d6e6bfd",
+          "https://webhooks.creatio.com/webhooks/7df1ce6d-59e7-4c12-8ea2-fff49d6e6bfd",
           {
             method: "POST",
             headers: {
