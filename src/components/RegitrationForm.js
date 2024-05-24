@@ -119,7 +119,7 @@ const RegitrationForm = () => {
         setStep(step + 1);
       } else {
         // Handle final submission
-        console.log('Form submitted:', formData);
+        setStep(step + 1);
         fetch(
           "https://webhooks.creatio.com/webhooks/7df1ce6d-59e7-4c12-8ea2-fff49d6e6bfd",
           {
@@ -133,7 +133,6 @@ const RegitrationForm = () => {
           .then((response) => {
             if (response.ok) {
               console.log("Form data sent successfully");
-              setStep(step + 1);
             } else {
               console.error("Failed to send form data");
             }
