@@ -118,8 +118,8 @@ const RegitrationForm = () => {
       if (step < 3) {
         setStep(step + 1);
       } else {
-        // Handle final submission
         setStep(step + 1);
+        // Handle final submission
         fetch(
           "https://webhooks.creatio.com/webhooks/7df1ce6d-59e7-4c12-8ea2-fff49d6e6bfd",
           {
